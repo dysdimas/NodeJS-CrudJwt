@@ -110,7 +110,7 @@ module.exports = {
                 results.password = undefined;
                 results.email = undefined;
                 const jsontoken = sign({ result: results }, "kisstherain", {
-                    expiresIn: "5m"
+                    expiresIn: "10m"
                 });
                 return res.json({
                     success: 1,
