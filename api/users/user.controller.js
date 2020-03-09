@@ -108,8 +108,9 @@ module.exports = {
             const result = compareSync(body.password, results.password);
             if (result) {
                 results.password = undefined;
+                results.email = undefined;
                 const jsontoken = sign({ result: results }, "kisstherain", {
-                    expiresIn: "1h"
+                    expiresIn: "5m"
                 });
                 return res.json({
                     success: 1,
