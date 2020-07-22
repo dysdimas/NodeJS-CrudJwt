@@ -109,7 +109,7 @@ module.exports = {
             if (result) {
                 results.password = undefined;
                 results.email = undefined;
-                const jsontoken = sign({ result: results }, "kisstherain", {
+                const jsontoken = sign({ result: results }, hashSync(results.password), {
                     expiresIn: "10m"
                 });
                 return res.json({
